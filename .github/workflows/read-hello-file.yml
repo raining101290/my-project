@@ -1,0 +1,19 @@
+name: Read Hello File
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Display hello.txt Content
+      run: |
+        echo "Reading content of hello.txt:"
+        cat hello.txt
